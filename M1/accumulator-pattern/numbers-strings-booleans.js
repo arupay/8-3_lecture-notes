@@ -44,3 +44,15 @@ const groceryBudget = 350;
 const groceryReceipts = [40.24, 130.97, 99.02, 85.55];
 
 console.log(subtractSpendingFromBudget(groceryBudget, groceryReceipts));
+
+
+const names = ["Rachel" ,"Phoebe", "Ross"]
+
+
+function invitation(names){
+  for (let i = 0; i < names.length; i++){
+    names[i] = `Hello, ${names[i]}, you are cordially invited to my dinner party`
+  }
+  return names
+}
+console.log(invitation(names));

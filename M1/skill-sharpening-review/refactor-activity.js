@@ -30,7 +30,7 @@
  * @returns {Object[]} The original array of assignment objects, with a new key of `status` added to each object.
  * 
  * EXAMPLE:
- *  const assignments = [
+ const assignments = [
       { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
       { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
       { kind: "ESSAY", score: { received: 4, max: 5 } },
@@ -54,6 +54,13 @@
     //>   },
     //> ];
  */
+
+ const assignments = [
+      { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+      { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+      { kind: "ESSAY", score: { received: 4, max: 5 } },
+    ];
+
 function gradeAssignments(assignments) {
   for (const assignment of assignments) {
     if (assignment.kind === "PASS-FAIL") {
@@ -65,8 +72,8 @@ function gradeAssignments(assignments) {
   }
 
   return assignments;
-}
 
+}
 function getPassFailGrade(assignment) {
   if (assignment.score.received === assignment.score.max) {
     return "PASSED";
@@ -87,3 +94,5 @@ function getPercentageGrade(assignment) {
 }
 
 function getOtherGrade(assignment) {}
+
+gradeAssignments(assignments);
