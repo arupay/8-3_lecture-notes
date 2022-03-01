@@ -10,7 +10,20 @@
 let priceOfHouse = "€1.500.000";
 let priceOfCar = "€20.000";
 
-if (priceOfHouse > priceOfCar) {
+function filterNums(string) {
+  let newString = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== "€" && string[i] !== ".") {
+      newString += string[i];
+    }
+  }
+  return Number(newString);
+}
+
+let priceOfCarString = filterNums(priceOfCar);
+let priceOfHouseString = filterNums(priceOfHouse);
+
+if (priceOfHouseString > priceOfCarString) {
   console.log("The house is more expensive");
 } else {
   console.log("The car is more expensive");

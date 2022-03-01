@@ -10,3 +10,26 @@ const trainCommuteTimes = [30, 62, 41, 39, 38, 31, 51, 53, 34, 40];
 
 // Hint: write a function that computes the average of an array of numbers.
 //   Use this function to find the average commute time for the train and for your car.
+
+function getAvg(nums) {
+  let sum = 0;
+  for (let num of nums) {
+    sum += num;
+  }
+  return sum / nums.length;
+}
+
+function fasterCommute(commute1, commute2) {
+  if (getAvg(commute1) > getAvg(commute2)) {
+    return `The first commute method is the faster commute on average`;
+  } else if (getAvg(commute1) === getAvg(commute2)) {
+    return `Both commutes are the same average time!`;
+  } else {
+    return `The second commute method is the faster commute on average`;
+  }
+}
+
+console.log(fasterCommute(carCommuteTimes, trainCommuteTimes));
+
+console.log(getAvg(carCommuteTimes));
+console.log(getAvg(trainCommuteTimes));

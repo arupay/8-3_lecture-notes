@@ -5,22 +5,40 @@
  * example output: name,sclass,rollno
  */
 const student = {
-  name: 'David Rayy',
-  sclass: 'VI',
+  name: "David Rayy",
+  sclass: "VI",
   rollno: 12,
 };
-
+function returnKeys(obj) {
+  let keyString = Object.keys(obj);
+  return keyString.join(", ");
+}
+// console.log(returnKeys(student));
 /**
  * 2
  * Write a function to delete the rollno property from the following object.
  * Print the object before AND after deleting the property.
  */
+// console.log(student);
 
+function deleteProperty(obj, prop) {
+  delete obj[prop];
+  return obj;
+}
+
+// console.log(deleteProperty(student, "rollno"));
 /**
  * 3
  *
  * Write a function to get the length of a  object.
  */
+
+function objLength(obj) {
+  let newArr = Object.keys(obj);
+  return newArr.length;
+}
+
+// console.log(objLength(student));
 
 /**
  * 4
@@ -30,22 +48,32 @@ const student = {
 
 const library = [
   {
-    author: 'Bill Gates',
-    title: 'The Road Ahead',
+    author: "Bill Gates",
+    title: "The Road Ahead",
     readingStatus: true,
   },
   {
-    author: 'Steve Jobs',
-    title: 'Walter Isaacson',
+    author: "Steve Jobs",
+    title: "Walter Isaacson",
     readingStatus: true,
   },
   {
-    author: 'Suzanne Collins',
-    title: 'Mockingjay: The Final Book of The Hunger Games',
+    author: "Suzanne Collins",
+    title: "Mockingjay: The Final Book of The Hunger Games",
     readingStatus: false,
   },
 ];
 
+function stringOfVals(obj) {
+  let str = "";
+  for (let book of obj) {
+    valsString = Object.values(book).join(", ");
+    str += `\n ${valsString}`;
+  }
+  return str;
+}
+
+console.log(stringOfVals(library));
 /**
  * 5
  *
@@ -86,9 +114,9 @@ const library = [
  */
 
 const book = {
-  author: 'Bill Gates',
+  author: "Bill Gates",
   libraryID: 1254,
-  title: 'The Road Ahead',
+  title: "The Road Ahead",
 };
 
 /**
