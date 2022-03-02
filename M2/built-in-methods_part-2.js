@@ -7,7 +7,10 @@
  *
  * @returns {Number} - a random decimal number between 30 and 70
  */
-function randomDecimal30To70() {}
+function randomDecimal30To70() {
+  let x = Math.random() * 40 + 30;
+  return x;
+}
 
 /**
  * REVIEW ACTIVITY - Part 2
@@ -65,7 +68,35 @@ let exampleObject = {
  * @returns {String} - name of the highest paid role
  *
  */
-function highestSalary(roles) {}
+
+//Example w/ FOR IN LOOP
+// function highestSalary(roles) {
+//   let roleName = "";
+//   let roleSalary = 0;
+//   for (let jobTitle in roles) {
+//     if (roles[jobTitle] > roleSalary) {
+//       roleSalary = roles[jobTitle];
+//       roleName = jobTitle;
+//     }
+//   }
+//   return roleName;
+// }
+
+// for of loop returns TYPE ERROR! CANNOT USE
+// function highestSalary(roles) {
+//   let roleName = "";
+//   let roleSalary = 0;
+//   for (let value of roles) {
+//     return value;
+//   }
+// }
+
+function highestSalary(roles) {
+  let entries = Object.entries(roles);
+  for (let entry of entries) {
+    console.log(entry);
+  }
+}
 
 let exampleRoles = {
   juniorDev: 90000,
@@ -73,6 +104,7 @@ let exampleRoles = {
   engineeringManager: 200000,
 };
 
+console.log(highestSalary(exampleRoles));
 /**
  * RESEARCH ACTIVITY
  *
