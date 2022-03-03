@@ -29,13 +29,17 @@ console.log(occupation);
  * 5. Apply destructuring to the following function.
  */
 function getAstronautActivityStatus(astronaut) {
+  let { isActive, name} = astronaut
   let result = "";
-  if (astronaut.isActive) {
-    result = `${astronaut.name} is active.`;
-  } else {
-    result = `${astronaut.name} is not active.`;
+  if isActive {
+    result = `${name} is active.`;
+  } else { 
+    result = `${name} is not active.`;
   }
   return result;
+}
+
+
 }
 
 // const astronaut = {

@@ -22,11 +22,11 @@ console.log(fullName);
 /**
  * 3. The function below expects that sometimes name will not be provided. Update the greet() function so that it uses default parameters.
  */
-function greet(name = "space cadet") {
-  result = `Welcome to NASA, ${name}!`;
-  return result;
-}
-
+// function greet(name = "space cadet") {
+//   result = `Welcome to NASA, ${name}!`;
+//   return result;
+// }
+const greet = (name = "space cadet") => `Welcome to Nasa, ${name}`;
 console.log(greet("Tony"));
 
 greet("Jessica"); //> "Welcome to NASA, Jessica!"
