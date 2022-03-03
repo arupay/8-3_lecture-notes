@@ -24,6 +24,11 @@ greet(); //> "Welcome to NASA, space cadet!"
  * (you may need to use a ternary operator and an implicit return)
  */
 
+const greet2 = (name) =>
+  name ? `Welcome To Nasa, ${name}` : "Welcome to Nasa, space cadet!";
+
+console.log(greet2("Jessica"));
+console.log(greet2());
 /**
  * 3. Are there any benefits to using the arrow function syntax? Are there any limitations? Write a brief response below.
  */
