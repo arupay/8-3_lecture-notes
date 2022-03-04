@@ -122,7 +122,9 @@ console.log(
  * The each fn loops through the given array and runs the callback function on each of it's elements.
  */
 function each(arr, fn) {
-  // write your code here
+  for (let element of arr) {
+    fn(element);
+  }
 }
 
 // The following call to each should print
@@ -150,14 +152,20 @@ each([1, 2, 3, 4], function (value) {
  * The map fn should return a new array where each new element is the return value from the anonymous function with the argument as the original element value.
  */
 function map(arr, fn) {
-  // write your code here
+  let newArr = [];
+  for (let element of arr) {
+    newArr.push(fn(element));
+  }
+  return newArr;
 }
 
 // The following call to map should return
 // [2, 4, 6, 8];
-map([1, 2, 3, 4], function (value) {
-  return value * 2;
-});
+console.log(
+  map([1, 2, 3, 4], function (value) {
+    return value * 2;
+  })
+);
 
 /**
  * Write a fn called reject which accepts two parameters:
@@ -166,17 +174,27 @@ map([1, 2, 3, 4], function (value) {
  * The reject fn should return a new array containing all of the values that do not return true to the callback
  */
 function reject(arr, fn) {
-  // write your code here
+  let newArr = [];
+  for (let element of arr) {
+    if (!fn(element)) {
+      newArr.push(element);
+    }
+  }
+  return newArr;
 }
 
 // The following call to reject should return
 // [1, 2];
-reject([1, 2, 3, 4], function (value) {
-  return value > 2;
-});
+console.log(
+  reject([1, 2, 3, 4], function (value) {
+    return value > 2;
+  })
+);
 
 // The following call to reject should return
 // [3, 5];
-reject([2, 3, 4, 5], function (value) {
-  return value % 2 === 0;
-});
+console.log(
+  reject([2, 3, 4, 5], function (value) {
+    return value % 2 === 0;
+  })
+);
