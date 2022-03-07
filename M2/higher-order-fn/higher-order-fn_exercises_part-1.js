@@ -57,12 +57,19 @@ function go(direction, operation) {
   return direction;
 }
 
+<<<<<<< HEAD
 // this is a high order funciton because the operation parameter is a funciton
 
 go("Left", storeDirections); // we are calling the function here
 go("Right", storeDirections);
 go("Up", storeDirections);
 console.log(directions); //> ["Left", "Right", "Up"]
+=======
+go('Left', storeDirections);
+go('Right', storeDirections);
+go('Up', storeDirections);
+// console.log(directions); //> ["Left", "Right", "Up"]
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
 
 /**
  * Take a look at the higher order function below.
@@ -115,6 +122,24 @@ console.log(
  * "up Down left" -> "UDL"
  */
 
+console.log(
+  transform('up Down left', function (text) {
+    // split each word into an array, using the whitespace as the delimiter
+    const textArr = text.split(' ');
+    // create a temp variable to store result
+    let result = '';
+    // loop through the array
+    for (let word of textArr) {
+      // add the first char of each word to the result
+      result += word[0];
+    }
+    // capitalize the result
+    result = result.toUpperCase(); // strings can't be mutated
+
+    return result;
+  }),
+);
+
 /**
  * Write a fn called each which accepts two parameters:
  *  - an array
@@ -122,8 +147,16 @@ console.log(
  * The each fn loops through the given array and runs the callback function on each of it's elements.
  */
 function each(arr, fn) {
+<<<<<<< HEAD
   for (let element of arr) {
     fn(element);
+=======
+  for (let i = 0; i < arr.length; i++) {
+    // for (let e of arr) { // for...of
+    // run the function on each element
+    fn(arr[i]);
+    // fn(e); // for...of
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
   }
 }
 
@@ -132,18 +165,20 @@ function each(arr, fn) {
 // 2
 // 3
 // 4
-each([1, 2, 3, 4], function (value) {
-  console.log(value);
-});
+// each([1, 2, 3, 4], function (value) {
+//   const transformedValue = value;
+//   console.log(transformedValue);
+// });
 
 // The following call to each should print
 // 2
 // 4
 // 6
 // 8
-each([1, 2, 3, 4], function (value) {
-  console.log(value * 2);
-});
+// each([1, 2, 3, 4], function (value) {
+//   let transformedValue = value * 2;
+//   console.log(transformedValue);
+// });
 
 /**
  * Write a fn called map which accepts two parameters:
@@ -153,19 +188,37 @@ each([1, 2, 3, 4], function (value) {
  */
 function map(arr, fn) {
   let newArr = [];
+<<<<<<< HEAD
   for (let element of arr) {
     newArr.push(fn(element));
   }
+=======
+  // loop through the arr
+  for (let e of arr) {
+    // run the function on the element
+    newArr.push(fn(e));
+  }
+
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
   return newArr;
 }
 
 // The following call to map should return
 // [2, 4, 6, 8];
+<<<<<<< HEAD
 console.log(
   map([1, 2, 3, 4], function (value) {
     return value * 2;
   })
 );
+=======
+// console.log(
+//   map([1, 2, 3, 4], function (value) {
+//     const transformedValue = value * 2;
+//     return transformedValue;
+//   }),
+// );
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
 
 /**
  * Write a fn called reject which accepts two parameters:
@@ -173,6 +226,7 @@ console.log(
  *  - a callback fn
  * The reject fn should return a new array containing all of the values that do not return true to the callback
  */
+<<<<<<< HEAD
 function reject(arr, fn) {
   let newArr = [];
   for (let element of arr) {
@@ -181,10 +235,29 @@ function reject(arr, fn) {
     }
   }
   return newArr;
+=======
+function reject(arr, isAccepted) {
+  // create a new arr empty
+  let rejects = [];
+  // loop through the array
+  for (let e of arr) {
+    // store the callback fn return value in a variable
+    // let isAccepted = fn(e);
+    // if the variable is false
+    if (!isAccepted(e)) {
+      // add the value to the new array
+      rejects.push(e);
+    }
+  }
+
+  // return the new arr
+  return rejects;
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
 }
 
 // The following call to reject should return
 // [1, 2];
+<<<<<<< HEAD
 console.log(
   reject([1, 2, 3, 4], function (value) {
     return value > 2;
@@ -198,3 +271,20 @@ console.log(
     return value % 2 === 0;
   })
 );
+=======
+// console.log(
+//   reject([1, 2, 3, 4], function (value) {
+//     const transformedValue = value > 2;
+//     return transformedValue;
+//   }),
+// );
+
+// The following call to reject should return
+// [3, 5];
+// console.log(
+//   reject([2, 3, 4, 5], function (value) {
+//     const transformedValue = value % 2 === 0;
+//     return transformedValue;
+//   }),
+// );
+>>>>>>> 7acda95c0bc9ff0ee49ab40d05ac62f5e376aab1
