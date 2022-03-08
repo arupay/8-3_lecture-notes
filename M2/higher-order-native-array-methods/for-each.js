@@ -3,29 +3,62 @@
  *
  * The .forEach() method's callback function has up to three parameters. What are these parameters?
  */
+//
+// element, index, array
+
+// let soccerTeams = [
+//   "Manchester United",
+//   "Real Madrid",
+//   "Boca Juniors",
+//   "NYC FC",
+// ];
+
+// function printTeamSupport(team) {
+//   return `I am a super fan of ${team}`;
+// }
+
+// soccerTeams.forEach((team) => {
+//   console.log("I am a super fan of " + team);
+// });
+
+// //create a new array with each team having it's own object
+
+// let soccerTeamsV2 = [];
+// soccerTeams.forEach(function (team, index) {
+//   soccerTeamsV2[index] = {};
+//   soccerTeamsV2[index].name = team;
+//   soccerTeamsV2[index].fanMessage = printTeamSupport(team);
+// });
 
 /**
  * 2
+ *
+ *
+ *
  *
  * Update the code below so that it uses .forEach() instead of a for loop. Inside of printAllComics() you will have to write another, anonymous function.
  */
 
 // do not edit the comics object
 const comics = [
-  { title: 'Calvin & Hobbes', author: 'Bill Watterson', kind: 'print' },
-  { title: 'Zen Pencils', author: 'Gavin Aung Than', kind: 'web' },
-  { title: 'Nancy', author: 'Olivia James', kind: 'print' },
-  { title: 'False Knees', author: 'Joshua Barkman', kind: 'web' },
+  { title: "Calvin & Hobbes", author: "Bill Watterson", kind: "print" },
+  { title: "Zen Pencils", author: "Gavin Aung Than", kind: "web" },
+  { title: "Nancy", author: "Olivia James", kind: "print" },
+  { title: "False Knees", author: "Joshua Barkman", kind: "web" },
 ];
 
 function printAllComics(comics) {
   // Write your code here.
-  for (let comic of comics) {
+  comics.forEach((comic) => {
     console.log(`${comic.title} by ${comic.author}`);
-  }
+  });
+
+  // for (let comic of comics) {
+  //   console.log(`${comic.title} by ${comic.author}`);
+  // }
 }
 
-printAllComics(comics);
+// printAllComics(comics);
 
 /**
  * 3
@@ -37,7 +70,12 @@ printAllComics(comics);
 3. Nancy" by Olivia James
 4. False Knees" by Joshua Barkman
 */
-
+function printAllComics(comics) {
+  // Write your code here.
+  comics.forEach((comic) => {
+    console.log(`${comic.title}" by ${comic.author}`);
+  });
+}
 /**
  * 4
  * 
@@ -48,3 +86,11 @@ printAllComics(comics);
 (3 out of 4) Nancy" by Olivia James
 (4 out of 4) False Knees" by Joshua Barkman
 */
+function printAllComics(comics) {
+  // Write your code here.
+  comics.forEach((comic, index) => {
+    console.log(`(${index + 1} out of 4)${comic.title}" by ${comic.author}`);
+  });
+}
+
+printAllComics(comics);
