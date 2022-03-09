@@ -54,7 +54,27 @@ function findSnowDay(forecast) {}
  *
  * highWindDays(weatherData) // => ["Tuesday", "Saturday", "Sunday"]
  */
-function highWindDays(forecast) {}
+function highWindDays(forecast) {
+  let isWindy = (day) => day.wind.speed < 15;
+  forecast.filter(isWindy);
+
+  let getDayOfWeek = (day) => {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let dayNum = new Date(day.date).getDay();
+    return days[dayNum];
+  };
+  return forecast.filter(isWindy).map(getDayOfWeek);
+}
+
+console.log(highWindDays(weatherData));
 
 /**
  * 6. Print out the low temp for days with less than a 5% chance of precipitation.

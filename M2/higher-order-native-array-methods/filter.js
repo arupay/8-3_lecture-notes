@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-fans = [
-  { name: "tony", age: 22 },
-  { name: "jack", age: 24 },
-  { name: "schnookum", age: 15 },
-];
-
-// const pubFans = fans.map(function (fan) {
-//   if (fan.age > 18) {
-//     return fan;
-//   }
-// });
-
-let legalFans = fans.filter(function (fan) {
-  return fan.age > 18;
-});
-
-console.log(legalFans);
-
-=======
 /**
  * Array.filter(fn) <-- higher order because its takes a fn as parameter
  * Traverse the array, returning only the elements who pass a certain condiiton
@@ -33,15 +13,15 @@ console.log(legalFans);
 
 let fans = [
   {
-    name: 'georgia',
+    name: "georgia",
     age: 12,
   },
   {
-    name: 'kyle',
+    name: "kyle",
     age: 32,
   },
   {
-    name: 'Demitrius',
+    name: "Demitrius",
     age: 21,
   },
 ];
@@ -75,7 +55,6 @@ console.log(legalFans);
 
 // console.log(legalFansNames);
 
->>>>>>> f53284fda44fef2e934593be9725eddafb997b8c
 // do not edit the comics object
 const comics = [
   { title: "Calvin & Hobbes", author: "Bill Watterson", kind: "print" },
