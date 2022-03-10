@@ -1,15 +1,22 @@
 /**
+ * every() --> a higher order native array method
+ *
+ *
+ *
  * 1
  *
  * The .every() method expects at least one argument. What data type is this argument?
  * What is a callback function?
  */
 
+//boolean;
+
 /**
  * 2
  *
  * The .every() method's callback function has up to three parameters. What are these parameters?
  */
+// element, index, array
 /**
  * 3
  *
@@ -17,18 +24,20 @@
  */
 
 const comics = [
-  { title: 'Calvin & Hobbes', author: 'Bill Watterson', kind: 'print' },
-  { title: 'Zen Pencils', author: 'Gavin Aung Than', kind: 'web' },
-  { title: 'Nancy', author: 'Olivia James', kind: 'print' },
-  { title: null, author: 'Joshua Barkman', kind: 'web' },
+  { title: "Calvin & Hobbes", author: "Bill Watterson", kind: "print" },
+  { title: "Zen Pencils", author: "Gavin Aung Than", kind: "web" },
+  { title: "Nancy", author: "Olivia James", kind: "print" },
+  { title: null, author: "Joshua Barkman", kind: "web" },
 ];
 
 function isPrintComic(comic) {
-  return comic.kind === 'print';
+  return comic.kind === "print";
 }
 
 const arePrintcomics = comics.every(isPrintComic);
 console.log(arePrintcomics); //> false
+
+console.log(comics.every(isPrintComic));
 
 /**
  * 4

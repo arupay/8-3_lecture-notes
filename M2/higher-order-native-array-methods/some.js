@@ -3,6 +3,10 @@
  *
  * How does the .some() method differ from the .every() method? How is it similar?
  */
+// both return boolean values ( true or false)
+//every will return false if at least ONE element doesn't meet condition
+
+//some checks if the first element will meet a condition
 
 /**
  * 2
@@ -11,15 +15,15 @@
  */
 
 const comics = [
-  { title: 'Calvin & Hobbes', author: 'Bill Watterson', kind: 'print' },
-  { title: 'Zen Pencils', author: 'Gavin Aung Than', kind: 'web' },
-  { title: 'Nancy', author: 'Olivia James', kind: 'print' },
-  { title: null, author: 'Joshua Barkman', kind: 'web' },
+  { title: "Calvin & Hobbes", author: "Bill Watterson", kind: "print" },
+  { title: "Zen Pencils", author: "Gavin Aung Than", kind: "web" },
+  { title: "Nancy", author: "Olivia James", kind: "print" },
+  { title: null, author: "Joshua Barkman", kind: "web" },
 ];
 
 function isWebComic(comic) {
-  return comic.kind === 'web';
+  return comic.kind === "web";
 }
 
-const result = comics.some(isWebComic);
+const result = comics.some(isWebComic(x, 4));
 console.log(result); //> true
