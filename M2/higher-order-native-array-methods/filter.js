@@ -15,14 +15,7 @@ let fans = [
     name: "georgia",
     age: 12,
   },
-<<<<<<< HEAD
-  {
-    name: "kyle",
-    age: 32,
-  },
-=======
-  { name: 'kyle', age: 32 },
->>>>>>> 7574b864d784da6a6277bb8f55a13bf0f6672fd8
+  { name: "kyle", age: 32 },
   {
     name: "Demitrius",
     age: 21,
@@ -60,33 +53,26 @@ console.log(legalFans);
 
 // do not edit the comics object
 const comics = [
-<<<<<<< HEAD
-  { title: "Calvin & Hobbes", author: "Bill Watterson", kind: "print" },
-  { title: "Zen Pencils", author: "Gavin Aung Than", kind: "web" },
-  { title: "Nancy", author: "Olivia James", kind: "print" },
-  { title: "False Knees", author: "Joshua Barkman", kind: "web" },
-=======
   {
-    title: 'Calvin & Hobbes',
-    author: 'Bill Watterson',
-    kind: 'print',
+    title: "Calvin & Hobbes",
+    author: "Bill Watterson",
+    kind: "print",
   },
   {
-    title: 'Zen Pencils',
-    author: 'Gavin Aung Than',
-    kind: 'web',
+    title: "Zen Pencils",
+    author: "Gavin Aung Than",
+    kind: "web",
   },
   {
-    title: 'Nancy',
-    author: 'Olivia James',
-    kind: 'print',
+    title: "Nancy",
+    author: "Olivia James",
+    kind: "print",
   },
   {
-    title: 'False Knees',
-    author: 'Joshua Barkman',
-    kind: 'web',
+    title: "False Knees",
+    author: "Joshua Barkman",
+    kind: "web",
   },
->>>>>>> 7574b864d784da6a6277bb8f55a13bf0f6672fd8
 ];
 
 /**
