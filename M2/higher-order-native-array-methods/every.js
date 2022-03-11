@@ -1,10 +1,4 @@
 /**
-<<<<<<< HEAD
- * every() --> a higher order native array method
- *
- *
- *
-=======
  * Array.every() --> a higher order native array method
  * returns true if EVERY evaluated expression in the anonymous function is True
  * returns false if ANY evaluated expression iin the anonymous function is False
@@ -56,7 +50,6 @@ console.log(
 );
 
 /**
->>>>>>> 99a87488657b19459f6a7ed5083299d303c5a5e3
  * 1
  *
  * The .every() method expects at least one argument. What data type is this argument?
@@ -70,11 +63,6 @@ console.log(
  *
  * The .every() method's callback function has up to three parameters. What are these parameters?
  */
-<<<<<<< HEAD
-// element, index, array
-=======
-
->>>>>>> 99a87488657b19459f6a7ed5083299d303c5a5e3
 /**
  * 3
  *
