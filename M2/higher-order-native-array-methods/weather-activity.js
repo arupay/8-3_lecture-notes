@@ -1,4 +1,4 @@
-const weatherData = require('./weather-data.js');
+const weatherData = require("./weather-data.js");
 
 /**
  * Use built in higher order array methods to answer questions about the seven day weather forecast
@@ -10,7 +10,10 @@ const weatherData = require('./weather-data.js');
  * @param {Object[]} forecast
  * @returns {Object[]} - filtered list containing warm days
  */
-function daysWarmerThan50(forecast) {}
+function daysWarmerThan50(forecast) {
+  return forecast.filter((day) => day.highTemp > 50);
+}
+// console.log(daysWarmerThan50(weatherData));
 
 /**
  * 2. Get a list of the highs and lows for each day.
@@ -22,8 +25,10 @@ function daysWarmerThan50(forecast) {}
  *
  * tempRanges(weatherData) // => [[38, 50], [33, 41], [34, 49], [44, 52], [28, 49], [34, 41], [44, 56]]
  */
-function tempRanges(forecast) {}
-
+function tempRanges(forecast) {
+  return forecast.map((day) => [day.lowTemp, day.highTemp]);
+}
+// console.log(tempRanges(weatherData));
 /**
  * 3. Print out a weather summary for every day in the seven day forecast.
  *
@@ -37,12 +42,25 @@ function tempRanges(forecast) {}
  * // => ...
  * // => "Today there is a high of 56 with a 2% chance of rain"
  */
-function logWeatherSummary(forecast) {}
+function logWeatherSummary(forecast) {
+  return forecast.map(
+    (day) =>
+      `Today there is a high of ${day.highTemp} with a ${
+        day.precipitation.chance * 100
+      }% chance of rain.`
+  );
+}
+
+// console.log(logWeatherSummary(weatherData));
 
 /**
  * 4. Find the first day this week that it might snow
  */
-function findSnowDay(forecast) {}
+function findSnowDay(forecast) {
+  return forecast.find((day) => day.precipitation.type.includes("snow"));
+}
+
+console.log(findSnowDay(weatherData));
 
 /**
  * 5. Get a list of days of the week that the wind will be above 15 mph.
@@ -56,7 +74,6 @@ function findSnowDay(forecast) {}
  */
 function highWindDays(forecast) {
   let isWindy = (day) => day.wind.speed < 15;
-  forecast.filter(isWindy);
 
   let getDayOfWeek = (day) => {
     let days = [
@@ -89,7 +106,14 @@ console.log(highWindDays(weatherData));
  * // => "3/13/2022 has a low of 34"
  * // => "3/14/2022 has a low of 44"
  */
-function logSunnyDayLows(forecast) {}
+function logSunnyDayLows(forecast) {
+  const lessThan5Percent = (day) => day.precipitation.chance < 0.05;
+  const strDateAndLowTemp = (day) => `${day.date} has a low of ${day.lowTemp}`;
+
+  return forecast.filter(lessThan5Percent).map(strDateAndLowTemp);
+}
+
+console.log(logSunnyDayLows(weatherData));
 
 /**
  * 7. Given the current temparature, find the first day of the week it could plausibly be
@@ -113,8 +137,20 @@ function findDayByTemp(forecast, temperature) {
   // convert it to a Date object
   const firstWeatherDay = new Date(firstWeatherDate);
   const firstWeatherDayIndex = firstWeatherDay.getDay();
+
+  console.log(firstWeatherDate);
+  console.log(firstWeatherDay);
+  console.log(firstWeatherDayIndex);
   // using the Date object, calculate the day of the week
-  const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   return weekDays[firstWeatherDayIndex];
 }
