@@ -6,11 +6,10 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
   justify-content: center;
   grid-gap: 5px;
   grid-auto-rows: minmax(120px, auto);
-  gap: 50px;
 }
 
 .box {
